@@ -154,7 +154,9 @@ module RubyCAS
         unauthorized!(controller)
         return false
       end
-      
+
+      alias_method :before, :filter
+
       # used to allow faking for testing
       # with cucumber and other tools.
       # use like 
