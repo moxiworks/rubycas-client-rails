@@ -377,7 +377,7 @@ module RubyCAS
         
         params = controller.params.dup
         params.delete(:ticket)
-        service_url = controller.url_for(params)
+        service_url = controller.url_for(params.to_enum.to_h)
         log.debug("Guessed service url: #{service_url.inspect}")
         return service_url
       end
