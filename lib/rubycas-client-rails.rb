@@ -275,7 +275,7 @@ module RubyCAS
         controller.session[:previous_redirect_to_cas] = Time.now
         
         log.debug("Redirecting to #{redirect_url.inspect}")
-        controller.send(:redirect_to, redirect_url)
+        controller.send(:redirect_to, redirect_url, allow_other_host: true)
       end
       
       private
